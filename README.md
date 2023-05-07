@@ -27,7 +27,4 @@ This app uses the OpenWeatherMap API to fetch weather data. To use the API, you'
 To use the app, simply enter a location in the search bar and press the "Search" button. The app will fetch weather data for the given location and display it on the page.
 
 ### Contributing
-If you'd like to contribute to the project, please fork the repository and create a pull request. We welcome any contributions, whether it's fixing a bug, adding a new feature, or improving the documentation.
-
-### License
-This project is licensed under the MIT License - see the LICENSE file for details.
+If you'd like to contribute to the project, please fork the repository and create a pull request. I welcome any contributions, whether it's fixing a bug, adding a new feature, or improving the documentation.
