@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a weather app built with React and Typescript that showcases the current weather for a given location.
+It was bootstrapped with create-react-app and uses styles and some concepts from my vanilla JS version:
+https://github.com/wishesmandragora/weather-app
 
-## Available Scripts
+## Getting Started
+To get started with the app, first clone the repository:
 
-In the project directory, you can run:
+`git clone https://github.com/your-username/weather-app.git`
 
-### `npm start`
+Then, install the dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+npm install
+To start the app, run:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm start`
 
-### `npm test`
+This will start the app in development mode and open it in your default browser at http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Key
+This app uses the OpenWeatherMap API to fetch weather data. To use the API, you'll need to sign up for a free API key at https://openweathermap.org/api. Once you have an API key, create a .env.local file in the root of the project and add the following line, replacing YOUR_API_KEY with your actual API key:
 
-### `npm run build`
+`REACT_APP_API_KEY=YOUR_API_KEY`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Usage
+To use the app, simply enter a location in the search bar and press the "Search" button. The app will fetch weather data for the given location and display it on the page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contributing
+If you'd like to contribute to the project, please fork the repository and create a pull request. We welcome any contributions, whether it's fixing a bug, adding a new feature, or improving the documentation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
