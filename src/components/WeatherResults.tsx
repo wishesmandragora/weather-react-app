@@ -1,24 +1,34 @@
 import React from 'react'
+import { WeatherType } from '../types'
 
-const WeatherResults = () => {
+interface Props {
+  weather: WeatherType | null
+}
+
+const WeatherResults: React.FC<Props> = ({ weather }) => {
   return (
     <>
-      <section className="location">
-          <div className="city">
-            <h1 aria-hidden="true"></h1>
-            <div className="date"></div>
+      {weather && (
+        <>
+          <section className="location">
+            <div className="city">
+              <h1>{weather.name}</h1>
+              <span className="country">{weather?.country}</span>
+              <div className="date"></div>
+            </div>
+          </section>
+          <div className="current">
+            <div className="temp">
+              <span className="num">{weather.temperature}</span>
+              <span></span>
+            </div>
+            <div className="weather">{weather.description}</div>
           </div>
-        </section>
-        <div className="current">
-          <div className="temp">
-            <span className="num"></span>
-            <span></span>
-          </div>
-          <div className="weather"></div>
-          <div className="hi-low"></div>
-        </div>
+        </>
+      )}
     </>
-  )
-}
+  );
+};
+
 
 export default WeatherResults
