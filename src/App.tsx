@@ -7,6 +7,7 @@ const API_URL = 'http://api.openweathermap.org'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [weather, setWeather] = useState<WeatherType | null>(null);
  
   const getWeatherData = (term: string) => {
@@ -24,24 +25,33 @@ function App() {
           maxTemp: data.main.temp_max
           // Add other properties from the API response as needed
         };
-        console.log(data)
+        setError('');
         setWeather(transformedData);
       })
-      .catch((e) => console.log({ e }))
+      .catch((e) => {
+        setError(e.message)
+      })
   }
 
   const handleSearchTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
-    getWeatherData(e.target.value)
+    // getWeatherData(e.target.value)
   }
+
+  const handleSearchTermSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    getWeatherData(searchTerm);
+  }
+
   return (
     <div className="wrapper">
-      <header>
+      <header className="search-header">
+        <h1>Search for weather in <span>your country</span></h1>
         <SearchInput searchTerm={searchTerm} changeSeachTerm={handleSearchTermChange} />
+        <button type="submit" className="btn" onClick={handleSearchTermSubmit}>Submit</button>
       </header>
 
       <main>
-        <WeatherResults weather={weather} />
+        {error ? <p className="error-message">{error}</p> : <WeatherResults weather={weather} />}
       </main>
     </div>
   );
